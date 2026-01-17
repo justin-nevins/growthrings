@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
-import { MessageSquare, Check, Loader2 } from 'lucide-react';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { MessageSquare, Check, Loader2, Cloud } from 'lucide-react';
 import { saveComment, getComment } from '@/lib/comments';
 
 interface CommentSectionProps {
@@ -9,31 +9,60 @@ interface CommentSectionProps {
   title?: string;
 }
 
+// Backup to server (fire-and-forget, non-blocking)
+async function backupToServer(section: string, content: string) {
+  try {
+    await fetch('/api/draft', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ section, content }),
+    });
+  } catch (e) {
+    console.error('Backup failed:', e);
+  }
+}
+
 export default function CommentSection({ section, title = "Questions or Feedback?" }: CommentSectionProps) {
   const [content, setContent] = useState('');
   const [saved, setSaved] = useState(false);
   const [saving, setSaving] = useState(false);
   const [hasChanges, setHasChanges] = useState(false);
+  const [backed, setBacked] = useState(false);
+  const lastBackedContent = useRef('');
 
   useEffect(() => {
     const existing = getComment(section);
     if (existing) {
       setContent(existing);
+      lastBackedContent.current = existing;
     }
   }, [section]);
 
+  const performSave = useCallback(async () => {
+    setSaving(true);
+    saveComment(section, content);
+
+    // Backup to server if content changed significantly (more than just whitespace)
+    if (content.trim() && content.trim() !== lastBackedContent.current.trim()) {
+      backupToServer(section, content);
+      lastBackedContent.current = content;
+      setBacked(true);
+      setTimeout(() => setBacked(false), 3000);
+    }
+
+    setTimeout(() => {
+      setSaving(false);
+      setSaved(true);
+      setHasChanges(false);
+      setTimeout(() => setSaved(false), 2000);
+    }, 300);
+  }, [content, section]);
+
   const handleBlur = useCallback(() => {
     if (hasChanges && content) {
-      setSaving(true);
-      saveComment(section, content);
-      setTimeout(() => {
-        setSaving(false);
-        setSaved(true);
-        setHasChanges(false);
-        setTimeout(() => setSaved(false), 2000);
-      }, 300);
+      performSave();
     }
-  }, [content, hasChanges, section]);
+  }, [content, hasChanges, performSave]);
 
   const handleChange = (value: string) => {
     setContent(value);
@@ -42,14 +71,7 @@ export default function CommentSection({ section, title = "Questions or Feedback
   };
 
   const handleSave = () => {
-    setSaving(true);
-    saveComment(section, content);
-    setTimeout(() => {
-      setSaving(false);
-      setSaved(true);
-      setHasChanges(false);
-      setTimeout(() => setSaved(false), 2000);
-    }, 300);
+    performSave();
   };
 
   return (
@@ -70,7 +92,7 @@ export default function CommentSection({ section, title = "Questions or Feedback
           onChange={(e) => handleChange(e.target.value)}
           onBlur={handleBlur}
           placeholder="Leave your thoughts, questions, or concerns here..."
-          className="w-full h-32 p-4 bg-stone-50 border border-stone-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:bg-white resize-none transition-all"
+          className="w-full h-32 p-4 bg-stone-50 border border-stone-200 rounded-xl text-black placeholder:text-stone-400 focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:bg-white resize-none transition-all"
         />
 
         <div className="absolute bottom-3 right-3">

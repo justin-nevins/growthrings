@@ -103,11 +103,11 @@ export default function HomePage() {
             <FadeIn delay={200}>
               <div className="bg-stone-50 rounded-2xl p-8 border border-stone-100 hover:shadow-lg transition-shadow">
                 <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
-                  <Workflow className="h-6 w-6 text-amber-600" />
+                  <Hammer className="h-6 w-6 text-amber-600" />
                 </div>
-                <h3 className="text-xl font-bold text-stone-800 mb-3">Automated Follow-up</h3>
+                <h3 className="text-xl font-bold text-stone-800 mb-3">Showcase Your Work</h3>
                 <p className="text-stone-600">
-                  Never lose a lead. Automated email sequences and CRM integration to nurture prospects while you work.
+                  A portfolio that highlights your craftsmanship and attention to detail. Let your work speak for itself.
                 </p>
               </div>
             </FadeIn>

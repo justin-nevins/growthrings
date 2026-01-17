@@ -1,6 +1,6 @@
 import FadeIn from '@/components/FadeIn';
 import CommentSection from '@/components/CommentSection';
-import { Hammer, Globe, Mail, Users, Camera, Search, Workflow, Check } from 'lucide-react';
+import { Hammer, Globe, Users, Workflow, Check, FolderOpen, ImagePlus, Headphones } from 'lucide-react';
 
 const websiteFeatures = [
   { title: 'Portfolio Gallery', desc: 'Showcase your best projects with high-quality photo galleries' },
@@ -13,12 +13,11 @@ const websiteFeatures = [
   { title: 'Mobile Responsive', desc: 'Looks great on phones, tablets, and desktops' },
 ];
 
-const automationFeatures = [
-  { title: 'Lead Capture', desc: 'Form submissions go directly to your CRM or email' },
-  { title: 'Auto-Response', desc: 'Instant email to new leads confirming you received their inquiry' },
-  { title: 'Follow-up Sequences', desc: 'Automated email nurture for leads who don\'t respond immediately' },
-  { title: 'Realtor Referral Tracking', desc: 'Track which realtors send you leads' },
-  { title: 'Simple CRM', desc: 'Basic lead tracking so nothing falls through the cracks' },
+const portalFeatures = [
+  { title: 'Private Project Pages', desc: 'Password-protected pages for each client or investor' },
+  { title: 'Progress Updates', desc: 'Post summaries and milestones as the build progresses' },
+  { title: 'Photo Uploads', desc: 'Easily add photos from the job site - drag and drop' },
+  { title: 'Timeline View', desc: 'Clients see the full history of updates in one place' },
 ];
 
 export default function ServicesPage() {
@@ -69,23 +68,23 @@ export default function ServicesPage() {
           </div>
         </FadeIn>
 
-        {/* Automation Section */}
+        {/* Client/Investor Portal Section */}
         <FadeIn delay={200}>
           <div className="bg-white rounded-2xl p-8 shadow-sm border border-stone-100 mb-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
-                <Workflow className="h-5 w-5 text-amber-600" />
+                <FolderOpen className="h-5 w-5 text-amber-600" />
               </div>
-              <h2 className="text-2xl font-bold text-stone-800">Lead Automation</h2>
+              <h2 className="text-2xl font-bold text-stone-800">Client & Investor Portal</h2>
             </div>
 
             <p className="text-stone-600 mb-6">
-              Never lose a lead again. Automated systems to capture, respond, and follow up with
-              prospects while you focus on building.
+              Keep clients and investors in the loop. A private area where you can share progress
+              updates, photos, and milestones as the build progresses.
             </p>
 
             <div className="space-y-4 mb-6">
-              {automationFeatures.map((feature, index) => (
+              {portalFeatures.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3 p-4 bg-stone-50 rounded-lg">
                   <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-amber-600 font-bold text-sm">{index + 1}</span>
@@ -98,7 +97,7 @@ export default function ServicesPage() {
               ))}
             </div>
 
-            <CommentSection section="automation" title="Questions about automation?" />
+            <CommentSection section="portal" title="Would a client/investor portal be useful?" />
           </div>
         </FadeIn>
 
@@ -111,10 +110,10 @@ export default function ServicesPage() {
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               {[
-                { icon: Camera, title: 'Photo Management', desc: 'Easy drag-drop photo uploads for portfolio' },
-                { icon: Mail, title: 'Email Newsletter', desc: 'Stay in touch with past clients and realtors' },
-                { icon: Users, title: 'Investor Page', desc: 'Private page for potential investors' },
-                { icon: Search, title: 'SEO Package', desc: 'Google Business, local SEO optimization' },
+                { icon: ImagePlus, title: 'Photo Management', desc: 'Easy drag-drop uploads to keep your portfolio fresh' },
+                { icon: Workflow, title: 'Lead Automation', desc: 'Auto-responses and follow-up emails for inquiries' },
+                { icon: Users, title: 'Realtor Dashboard', desc: 'Let realtors track their referrals' },
+                { icon: Headphones, title: 'Ongoing Support', desc: 'Monthly maintenance, updates, and tech support' },
               ].map((addon, index) => (
                 <div key={index} className="bg-white/10 rounded-lg p-4">
                   <div className="flex items-center gap-3 mb-2">

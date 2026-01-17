@@ -2,16 +2,20 @@
 
 import { useState, useEffect } from 'react';
 import { getAllFeedback, FeedbackData } from '@/lib/comments';
-import { MessageSquare, CheckCircle, Send, AlertCircle } from 'lucide-react';
+import { MessageSquare, CheckCircle, Send, AlertCircle, Download } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 
 const sectionLabels: Record<string, string> = {
-  'spec-home': 'Ideal Spec Home',
-  'experience': 'Your Experience',
+  'domain-selection': 'Domain Selection',
+  'sweet-spot': 'Target Market & Sweet Spot',
+  'spec-homes': 'Spec Homes',
   'custom-homes': 'Custom Homes',
-  'investment': 'Investment & Funding',
-  'target-market': 'Target Market',
-  'operations': 'Operations & Capacity',
+  'gc-craftsman': 'GC vs. Craftsman Balance',
+  'realtor-strategy': 'Realtor Strategy',
+  'competitors': 'Competitors & Differentiation',
+  'brand-story': 'Brand Story & Experience',
+  'design-visuals': 'Design & Visuals',
+  'logistics': 'Business Logistics',
   'differentiators': 'What Makes You Different',
   'website': 'Website Features',
   'automation': 'Lead Automation',
@@ -19,10 +23,85 @@ const sectionLabels: Record<string, string> = {
   'process': 'Working Process',
 };
 
+// Order sections for the markdown output
+const sectionOrder = [
+  'domain-selection',
+  'sweet-spot',
+  'spec-homes',
+  'custom-homes',
+  'gc-craftsman',
+  'realtor-strategy',
+  'competitors',
+  'brand-story',
+  'design-visuals',
+  'logistics',
+  'differentiators',
+  'website',
+  'automation',
+  'addons',
+  'process',
+];
+
+function generateMarkdown(comments: Record<string, string>, overallFeedback: string): string {
+  const date = new Date().toISOString().split('T')[0];
+  const timestamp = new Date().toLocaleString();
+
+  let md = `---
+title: "Josh Krueger - Discovery Feedback"
+date: ${date}
+status: received
+---
+
+# GrowthRings Discovery Feedback
+
+**Submitted:** ${timestamp}
+
+---
+
+`;
+
+  // Add sections in order
+  for (const section of sectionOrder) {
+    const comment = comments[section];
+    if (comment && comment.trim()) {
+      md += `## ${sectionLabels[section] || section}\n\n${comment.trim()}\n\n---\n\n`;
+    }
+  }
+
+  // Add any sections not in the order list
+  for (const [section, comment] of Object.entries(comments)) {
+    if (!sectionOrder.includes(section) && comment && comment.trim()) {
+      md += `## ${sectionLabels[section] || section}\n\n${comment.trim()}\n\n---\n\n`;
+    }
+  }
+
+  // Add overall feedback
+  if (overallFeedback && overallFeedback.trim()) {
+    md += `## Overall Thoughts\n\n${overallFeedback.trim()}\n\n---\n\n`;
+  }
+
+  md += `*Generated from GrowthRings proposal site*\n`;
+
+  return md;
+}
+
+function downloadMarkdown(content: string, filename: string) {
+  const blob = new Blob([content], { type: 'text/markdown' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
 export default function FeedbackPage() {
   const [feedback, setFeedback] = useState<FeedbackData>({ comments: {}, options: {} });
   const [overallFeedback, setOverallFeedback] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [markdownContent, setMarkdownContent] = useState('');
 
   useEffect(() => {
     setFeedback(getAllFeedback());
@@ -31,13 +110,46 @@ export default function FeedbackPage() {
   const hasComments = Object.values(feedback.comments).some((c) => c && c.trim() !== '');
   const commentCount = Object.values(feedback.comments).filter((c) => c && c.trim() !== '').length;
 
-  const handleSubmit = () => {
-    // In production, this would send to a backend
-    console.log('Submitting feedback:', {
-      comments: feedback.comments,
-      overallFeedback,
-    });
-    setSubmitted(true);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async () => {
+    setSubmitting(true);
+    setError(null);
+
+    try {
+      // Generate markdown
+      const md = generateMarkdown(feedback.comments, overallFeedback);
+      setMarkdownContent(md);
+
+      // Send notification to Discord (just a heads up, not the full content)
+      const response = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          comments: feedback.comments,
+          options: feedback.options,
+          overallFeedback,
+        }),
+      });
+
+      if (!response.ok) {
+        console.error('Discord notification failed, but continuing...');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError('Failed to submit feedback. Please try again.');
+      console.error('Submit error:', err);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleDownload = () => {
+    const date = new Date().toISOString().split('T')[0];
+    const filename = `Josh - Discovery Feedback ${date}.md`;
+    downloadMarkdown(markdownContent, filename);
   };
 
   if (submitted) {
@@ -49,14 +161,42 @@ export default function FeedbackPage() {
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
               <h1 className="text-3xl font-bold text-stone-800 mb-4">Thank You!</h1>
               <p className="text-stone-600 mb-6">
-                Your feedback has been recorded. We&apos;ll review your responses and follow up soon.
+                Your feedback has been recorded. Download your responses as a document,
+                then we&apos;ll review and follow up soon.
               </p>
-              <a
-                href="/"
-                className="inline-block bg-amber-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-amber-700 transition-colors"
-              >
-                Back to Home
-              </a>
+
+              <div className="space-y-4">
+                <button
+                  onClick={handleDownload}
+                  className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-emerald-700 transition-colors"
+                >
+                  <Download className="h-5 w-5" />
+                  Download Feedback (.md)
+                </button>
+
+                <p className="text-sm text-stone-500">
+                  Save this file and send it to us, or keep it for your records.
+                </p>
+
+                <div className="pt-4">
+                  <a
+                    href="/"
+                    className="inline-block text-amber-600 hover:text-amber-700 font-medium transition-colors"
+                  >
+                    ← Back to Home
+                  </a>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Preview */}
+          <FadeIn delay={200}>
+            <div className="mt-8 bg-white rounded-2xl p-6 shadow-sm">
+              <h2 className="text-lg font-semibold text-stone-800 mb-4">Preview</h2>
+              <pre className="bg-stone-50 p-4 rounded-lg text-sm text-stone-700 overflow-x-auto whitespace-pre-wrap font-mono">
+                {markdownContent}
+              </pre>
             </div>
           </FadeIn>
         </div>
@@ -149,16 +289,26 @@ export default function FeedbackPage() {
           </div>
         </FadeIn>
 
+        {/* Error Message */}
+        {error && (
+          <FadeIn delay={350}>
+            <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-8 flex items-center gap-3">
+              <AlertCircle className="h-5 w-5 text-red-500 flex-shrink-0" />
+              <p className="text-red-700">{error}</p>
+            </div>
+          </FadeIn>
+        )}
+
         {/* Submit Button */}
         <FadeIn delay={400}>
           <div className="text-center">
             <button
               onClick={handleSubmit}
-              disabled={!hasComments && !overallFeedback}
+              disabled={(!hasComments && !overallFeedback) || submitting}
               className="bg-amber-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-amber-700 transition-colors inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Send className="h-5 w-5" />
-              Submit Feedback
+              {submitting ? 'Submitting...' : 'Submit Feedback'}
             </button>
             <p className="text-sm text-stone-500 mt-4">
               Your feedback is saved locally. Clicking submit will finalize your responses.
