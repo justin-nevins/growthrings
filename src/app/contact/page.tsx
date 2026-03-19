@@ -122,33 +122,27 @@ export default function ContactPage() {
             {/* Form */}
             <div className="lg:col-span-3">
               <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
                 onSubmit={(e) => {
                   e.preventDefault();
                   const form = e.target as HTMLFormElement;
-                  const formData = new FormData(form);
-                  fetch("/", {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/x-www-form-urlencoded",
-                    },
-                    body: new URLSearchParams(
-                      formData as unknown as Record<string, string>
-                    ).toString(),
-                  }).then(() => setSubmitted(true));
+                  const data = new FormData(form);
+                  const name = data.get("name") as string;
+                  const phone = data.get("phone") as string;
+                  const email = data.get("email") as string;
+                  const message = data.get("message") as string;
+                  const referral = data.get("referral") as string;
+
+                  const subject = encodeURIComponent(
+                    `New inquiry from ${name}`
+                  );
+                  const body = encodeURIComponent(
+                    `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nReferral: ${referral || "Not specified"}\n\n${message}`
+                  );
+                  window.location.href = `mailto:growthrings@gmail.com?subject=${subject}&body=${body}`;
+                  setSubmitted(true);
                 }}
                 className="space-y-6"
               >
-                <input type="hidden" name="form-name" value="contact" />
-                <p className="hidden">
-                  <label>
-                    Don&apos;t fill this out: <input name="bot-field" />
-                  </label>
-                </p>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label
