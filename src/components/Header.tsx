@@ -35,7 +35,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl font-bold text-white font-[family-name:var(--font-barlow)] uppercase tracking-wider">
-              Growth<span className="text-amber">Rings</span>
+              Larchwood<span className="text-amber"> Construction</span>
             </span>
           </Link>
 

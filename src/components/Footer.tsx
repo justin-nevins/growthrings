@@ -32,7 +32,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <span className="text-2xl font-bold font-[family-name:var(--font-barlow)] uppercase tracking-wider">
-              Growth<span className="text-amber">Rings</span>
+              Larchwood<span className="text-amber"> Construction</span>
             </span>
             <p className="mt-4 text-white/60 leading-relaxed">
               Custom homes built one at a time. Master craftsmanship in
@@ -119,7 +119,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/10 text-center text-white/40 text-sm">
           <p>
-            &copy; {new Date().getFullYear()} GrowthRings. All rights reserved.
+            &copy; {new Date().getFullYear()} Larchwood Construction. All rights reserved.
           </p>
         </div>
       </div>

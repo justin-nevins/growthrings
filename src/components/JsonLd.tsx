@@ -2,7 +2,7 @@ export default function JsonLd() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "GrowthRings Custom Homes",
+    name: "Larchwood Construction",
     description:
       "Custom homes built one at a time. Master craftsmanship in Montana's Flathead Valley. 30 years of hands-on expertise from design to finish carpentry.",
     url: "https://growthrings.nevinstech.com",

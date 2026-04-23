@@ -18,8 +18,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "GrowthRings | Custom Home Builder - Flathead Valley, Montana",
-    template: "%s | GrowthRings Custom Homes",
+    default: "Larchwood Construction | Custom Home Builder - Flathead Valley, Montana",
+    template: "%s | Larchwood Construction",
   },
   description:
     "Custom homes built one at a time. Master craftsmanship in Montana's Flathead Valley. 30 years of hands-on expertise from design to finish carpentry.",
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "GrowthRings Custom Homes",
-    title: "GrowthRings | Custom Home Builder - Flathead Valley, Montana",
+    siteName: "Larchwood Construction",
+    title: "Larchwood Construction | Custom Home Builder - Flathead Valley, Montana",
     description:
       "Custom homes built one at a time. Master craftsmanship in Montana's Flathead Valley.",
   },

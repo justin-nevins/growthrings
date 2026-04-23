@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "For Realtors",
   description:
-    "Your clients deserve a builder you trust. Partner with GrowthRings for reliable, transparent custom home building in Montana's Flathead Valley.",
+    "Your clients deserve a builder you trust. Partner with Larchwood Construction for reliable, transparent custom home building in Montana's Flathead Valley.",
 };
 
 export default function ForRealtorsPage() {

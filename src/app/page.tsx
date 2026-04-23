@@ -12,7 +12,7 @@ export default function Home() {
       <section className="relative h-screen min-h-[600px] flex items-center">
         <Image
           src="/images/hero/01-modern-mountain-home-twilight-stone-chimney.jpeg"
-          alt="Custom mountain home built by GrowthRings in Flathead Valley, Montana"
+          alt="Custom mountain home built by Larchwood Construction in Flathead Valley, Montana"
           fill
           className="object-cover"
           priority
@@ -203,7 +203,7 @@ export default function Home() {
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
               <Image
                 src="/images/hero/02-workshop-mountain-field-setting.jpeg"
-                alt="GrowthRings building in Montana's Flathead Valley"
+                alt="Larchwood Construction building in Montana's Flathead Valley"
                 fill
                 className="object-cover"
               />
