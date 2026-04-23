@@ -5,10 +5,11 @@ export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export default function ProjectDetailPage({
+export default async function ProjectDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  return <ProjectDetail slug={params.slug} />;
+  const { slug } = await params;
+  return <ProjectDetail slug={slug} />;
 }
