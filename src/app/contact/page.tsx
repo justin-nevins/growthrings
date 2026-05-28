@@ -82,10 +82,10 @@ export default function ContactPage() {
                 <div className="flex items-center gap-3 text-charcoal/70">
                   <Mail className="h-5 w-5 text-amber" />
                   <a
-                    href="mailto:growthrings@gmail.com"
+                    href="mailto:josh@larchwoodconstruction.com"
                     className="hover:text-amber transition-colors"
                   >
-                    growthrings@gmail.com
+                    josh@larchwoodconstruction.com
                   </a>
                 </div>
                 <div className="flex items-start gap-3 text-charcoal/70">
@@ -138,7 +138,7 @@ export default function ContactPage() {
                   const body = encodeURIComponent(
                     `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nReferral: ${referral || "Not specified"}\n\n${message}`
                   );
-                  window.location.href = `mailto:growthrings@gmail.com?subject=${subject}&body=${body}`;
+                  window.location.href = `mailto:josh@larchwoodconstruction.com?subject=${subject}&body=${body}`;
                   setSubmitted(true);
                 }}
                 className="space-y-6"

@@ -5,9 +5,9 @@ export default function JsonLd() {
     name: "Larchwood Construction",
     description:
       "Custom homes built one at a time. Master craftsmanship in Montana's Flathead Valley. 30 years of hands-on expertise from design to finish carpentry.",
-    url: "https://growthrings.nevinstech.com",
+    url: "https://larchwoodconstruction.com",
     telephone: "+14068580748",
-    email: "growthrings@gmail.com",
+    email: "josh@larchwoodconstruction.com",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Columbia Falls",

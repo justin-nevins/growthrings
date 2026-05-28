@@ -98,11 +98,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:growthrings@gmail.com"
+                  href="mailto:josh@larchwoodconstruction.com"
                   className="flex items-center gap-3 text-white/60 hover:text-amber transition-colors"
                 >
                   <Mail className="h-4 w-4 shrink-0" />
-                  growthrings@gmail.com
+                  josh@larchwoodconstruction.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/60">
