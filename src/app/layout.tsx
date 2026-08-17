@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import site from "@content/site.json";
 
 const barlow = Barlow_Condensed({
   variable: "--font-barlow",
@@ -18,11 +19,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Larchwood Construction | Custom Home Builder - Flathead Valley, Montana",
+    default: site.metaTitle,
     template: "%s | Larchwood Construction",
   },
-  description:
-    "Custom homes built one at a time. Master craftsmanship in Montana's Flathead Valley. 30 years of hands-on expertise from design to finish carpentry.",
+  description: site.metaDescription,
   keywords: [
     "custom home builder flathead",
     "custom home builder whitefish mt",
@@ -36,9 +36,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Larchwood Construction",
-    title: "Larchwood Construction | Custom Home Builder - Flathead Valley, Montana",
-    description:
-      "Custom homes built one at a time. Master craftsmanship in Montana's Flathead Valley.",
+    title: site.metaTitle,
+    description: site.footerBlurb,
   },
 };
 

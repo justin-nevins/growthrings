@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowLeft, Phone } from "lucide-react";
 import { getProjectBySlug, projects } from "@/data/projects";
 import Lightbox from "@/components/Lightbox";
+import site from "@content/site.json";
 
 export default function ProjectDetail({ slug }: { slug: string }) {
   const project = getProjectBySlug(slug);
@@ -103,19 +104,17 @@ export default function ProjectDetail({ slug }: { slug: string }) {
       <section className="section-padding bg-charcoal text-white text-center">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-3xl sm:text-4xl font-bold font-[family-name:var(--font-barlow)] uppercase">
-            Want Something Like <span className="text-amber">This?</span>
+            {site.projectCta.heading}{" "}
+            <span className="text-amber">{site.projectCta.headingAccent}</span>
           </h2>
-          <p className="mt-4 text-white/60">
-            Every project starts with a conversation about your vision, your
-            land, and your budget.
-          </p>
+          <p className="mt-4 text-white/60">{site.projectCta.text}</p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="tel:4068580748"
+              href={`tel:${site.phoneRaw}`}
               className="inline-flex items-center justify-center gap-2 bg-amber text-white px-8 py-4 rounded font-semibold hover:bg-amber-light transition-colors"
             >
               <Phone className="h-5 w-5" />
-              (406) 858-0748
+              {site.phone}
             </a>
             <Link
               href="/contact"

@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "title": "Our Process",
+    "description": "From first conversation to keys in hand. Learn how Josh Krueger builds custom homes one at a time in Montana's Flathead Valley."
+  },
+  "hero": {
+    "heading": "How We",
+    "headingAccent": "Build",
+    "text": "From first conversation to keys in hand. One project at a time, 12-24 months, with full transparency every step of the way."
+  },
+  "steps": [
+    {
+      "number": "01",
+      "title": "Discovery",
+      "duration": "2-4 weeks",
+      "description": "Every project begins with a conversation — your vision, your priorities, your land. We'll walk the site together, discuss what's realistic within your budget, and start shaping an approach. No sales pitch. Just an honest look at what we can build together.",
+      "image": "/images/process/17-foundation-forms-mountain-jobsite.jpeg"
+    },
+    {
+      "number": "02",
+      "title": "Design & Refine",
+      "duration": "4-8 weeks",
+      "description": "Josh collaborates with you on the design, drawing from three decades of build knowledge to guide every decision. Which materials hold up in Montana winters. Where to invest for impact. How to get the home you want within the budget you have. The design evolves until it's right — no rushing, no compromises on what matters.",
+      "image": "/images/details/06-timber-frame-vaulted-ceiling-beams.jpeg"
+    },
+    {
+      "number": "03",
+      "title": "Lock In",
+      "duration": "1-2 weeks",
+      "description": "With the design finalized, we present the contract, secure your deposit, and schedule our trusted subcontractors. Cost-plus pricing means complete transparency — you see actual material costs, actual labor costs, and Josh's fee. No hidden margins, no inflated contingencies.",
+      "image": "/images/process/09-timber-frame-commercial-construction.jpeg"
+    },
+    {
+      "number": "04",
+      "title": "Build",
+      "duration": "12-18 months",
+      "description": "This is where it all comes together. Josh is on site daily, managing every detail. You receive monthly invoices with a full cost breakdown and regular progress meetings to keep you informed. The job site stays immaculate — an orderly environment that reflects the standard of the finished product.",
+      "image": "/images/process/01-timber-frame-construction-framing.jpeg"
+    },
+    {
+      "number": "05",
+      "title": "Handover",
+      "duration": "2 weeks",
+      "description": "A thorough final walkthrough, punch list completion, and keys in hand. Because the same person who designed your home also managed the build and did the finish work, nothing falls through the cracks. Your home, built exactly as envisioned.",
+      "image": "/images/portfolio/interiors/01-great-room-timber-trusses-metal-railing.jpeg"
+    }
+  ],
+  "expect": {
+    "heading": "What to",
+    "headingAccent": "Expect",
+    "text": "A custom home takes time to do right. Plan for 12-24 months from your first meeting to move-in day. Because we take on only one project at a time, there are no delays from competing priorities — your timeline stays on track.",
+    "stats": [
+      { "value": "$700k-1.5M", "label": "Build budget range" },
+      { "value": "12-24 mo", "label": "Typical timeline" },
+      { "value": "1 at a time", "label": "Projects in progress" }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to",
+    "headingAccent": "Start?",
+    "text": "The best way to begin is a phone call. Let's talk about your vision, your land, and whether we're a good fit.",
+    "messageButton": "Send a Message"
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "portfolioPage": {
+    "heading": "Our",
+    "headingAccent": "Portfolio",
+    "text": "Five completed homes and counting. Modern mountain design with craftsman detailing — every project built one at a time.",
+    "beforeAfterHeading": "Before &",
+    "beforeAfterHeadingAccent": "After",
+    "beforeAfterText": "Drag the slider to see the transformation. From framing to finished — every detail matters."
+  },
+  "projects": [
+    {
+      "slug": "modern-mountain-stone-chimney",
+      "title": "Modern Mountain Residence",
+      "location": "Flathead Valley, MT",
+      "description": "Anchored by a striking stone chimney and framed by timber accents, this modern mountain home captures the Flathead Valley setting while delivering warmth and precision in every room. From the radiant-heated floors to the vaulted great room with custom metal railings, every element was designed and built with intention.",
+      "category": "exterior",
+      "featured": true,
+      "heroImage": "/images/hero/01-modern-mountain-home-twilight-stone-chimney.jpeg",
+      "sqft": "3,200",
+      "style": "Modern Mountain",
+      "highlights": [
+        "Custom stone chimney",
+        "Timber frame accents",
+        "Mountain-facing great room",
+        "Radiant floor heating"
+      ],
+      "images": [
+        "/images/hero/01-modern-mountain-home-twilight-stone-chimney.jpeg",
+        "/images/hero/04-modern-mountain-home-stone-chimney-daytime.png",
+        "/images/portfolio/interiors/01-great-room-timber-trusses-metal-railing.jpeg",
+        "/images/portfolio/interiors/05-loft-timber-trusses-stone-fireplace.jpeg",
+        "/images/portfolio/interiors/04-great-room-metal-railing-timber-trusses.jpeg",
+        "/images/details/06-timber-frame-vaulted-ceiling-beams.jpeg",
+        "/images/details/07-timber-frame-trusses-detail.jpeg",
+        "/images/process/01-timber-frame-construction-framing.jpeg",
+        "/images/process/03-timber-frame-great-room-construction.jpeg"
+      ]
+    },
+    {
+      "slug": "cedar-shingle-craftsman",
+      "title": "Cedar Shingle Craftsman",
+      "location": "Whitefish, MT",
+      "description": "Cedar shingle siding, hand-crafted trim, and custom built-in cabinetry give this home its distinctive character. A project built for clients who appreciate the difference between production-grade and true craftsmanship — visible in every joint, every profile, every finish detail.",
+      "category": "exterior",
+      "featured": true,
+      "heroImage": "/images/hero/05-cedar-shingle-craftsman-autumn-exterior.jpeg",
+      "sqft": "2,800",
+      "style": "Craftsman Mountain",
+      "highlights": [
+        "Cedar shingle exterior",
+        "Custom built-in cabinetry",
+        "Hand-crafted trim throughout",
+        "Covered entry with stone steps"
+      ],
+      "images": [
+        "/images/hero/05-cedar-shingle-craftsman-autumn-exterior.jpeg",
+        "/images/portfolio/exteriors/04-cedar-shingle-craftsman-exterior-angle.jpeg",
+        "/images/portfolio/exteriors/07-cedar-shingle-craftsman-exterior-front.jpeg",
+        "/images/portfolio/exteriors/05-cedar-shingle-sunroom-exterior.jpeg",
+        "/images/portfolio/exteriors/11-cedar-shingle-dormer-detail.jpeg",
+        "/images/portfolio/exteriors/14-cedar-shingle-front-entry-steps.jpeg",
+        "/images/details/17-custom-mudroom-built-in-cabinetry.jpeg",
+        "/images/details/20-custom-closet-built-in.jpeg",
+        "/images/portfolio/interiors/12-window-seat-built-in-bench.jpeg"
+      ]
+    },
+    {
+      "slug": "vertical-siding-modern",
+      "title": "Golden Hour Modern",
+      "location": "Columbia Falls, MT",
+      "description": "Sharp vertical siding, standing-seam metal roofing, and clean modern lines give this property a cohesive feel from the main residence to the matching garage and outbuildings. Designed to complement the Montana landscape without competing with it.",
+      "category": "exterior",
+      "featured": true,
+      "heroImage": "/images/hero/06-golden-hour-vertical-siding-autumn-exterior.jpeg",
+      "sqft": "2,400",
+      "style": "Modern Mountain",
+      "highlights": [
+        "Vertical siding with metal roof",
+        "Matching garage and outbuildings",
+        "Clean modern lines",
+        "Custom window trim details"
+      ],
+      "images": [
+        "/images/hero/06-golden-hour-vertical-siding-autumn-exterior.jpeg",
+        "/images/portfolio/exteriors/06-vertical-siding-snow-covered-exterior.jpeg",
+        "/images/portfolio/exteriors/18-modern-vertical-siding-garage-exterior.jpeg",
+        "/images/portfolio/exteriors/19-modern-garage-vertical-siding-1.jpeg",
+        "/images/portfolio/exteriors/20-modern-garage-vertical-siding-2.jpeg",
+        "/images/details/16-corrugated-metal-ceiling-panel-detail.jpeg",
+        "/images/details/23-garage-door-wood-trim-detail.jpeg",
+        "/images/details/27-siding-corner-detail-base.jpeg"
+      ]
+    },
+    {
+      "slug": "lakefront-timber-frame",
+      "title": "Lakefront Timber Frame",
+      "location": "Bigfork, MT",
+      "description": "Heavy timber trusses, a floor-to-ceiling stone fireplace, and open sightlines to the water define this lakefront home. The great room's exposed structural framing doubles as the home's defining design feature — proof that in the right hands, the bones of a house can be its most beautiful element.",
+      "category": "interior",
+      "featured": true,
+      "heroImage": "/images/portfolio/interiors/02-lakefront-living-room-stone-fireplace.jpeg",
+      "sqft": "3,600",
+      "style": "Timber Frame",
+      "highlights": [
+        "Exposed timber trusses",
+        "Lakefront stone fireplace",
+        "Custom metal railings",
+        "Loft with timber beams"
+      ],
+      "images": [
+        "/images/portfolio/interiors/02-lakefront-living-room-stone-fireplace.jpeg",
+        "/images/portfolio/interiors/03-open-concept-timber-frame-living-room.jpeg",
+        "/images/portfolio/interiors/06-stone-fireplace-timber-door-wood-storage.jpeg",
+        "/images/portfolio/interiors/07-loft-timber-trusses-railing.jpeg",
+        "/images/portfolio/interiors/08-open-living-room-loft-railing.jpeg",
+        "/images/details/08-timber-frame-staircase-loft.jpeg",
+        "/images/details/09-timber-frame-trusses-loft-railing.jpeg",
+        "/images/details/10-reclaimed-wood-mantel-stone-fireplace.jpeg"
+      ]
+    },
+    {
+      "slug": "red-barn-homestead",
+      "title": "Red Barn Homestead",
+      "location": "Kalispell, MT",
+      "description": "Barn-inspired architecture meets modern livability. A covered porch with exposed timber framing, a metal roof, and a matching garage create a property with real presence — rustic in character but built to contemporary standards.",
+      "category": "exterior",
+      "featured": false,
+      "heroImage": "/images/portfolio/exteriors/10-red-barn-home-front-driveway.jpeg",
+      "sqft": "2,600",
+      "style": "Modern Barn",
+      "highlights": [
+        "Barn-inspired design",
+        "Covered porch with timber framing",
+        "Matching outbuildings",
+        "Metal roof with wood accents"
+      ],
+      "images": [
+        "/images/portfolio/exteriors/10-red-barn-home-front-driveway.jpeg",
+        "/images/portfolio/exteriors/17-modern-barn-home-metal-roof.jpeg",
+        "/images/portfolio/exteriors/03-modern-cabin-covered-porch.jpeg",
+        "/images/portfolio/exteriors/09-covered-porch-timber-detail.jpeg",
+        "/images/portfolio/interiors/10-kitchen-island-timber-accents.jpeg",
+        "/images/details/15-custom-staircase-wood-paneling.jpeg",
+        "/images/details/24-painted-stair-railing-wood-floors.jpeg"
+      ]
+    },
+    {
+      "slug": "victorian-back-bar",
+      "title": "Victorian Back Bar",
+      "location": "Flathead Valley, MT",
+      "description": "This ornate Victorian-style back bar is a masterclass in fine carpentry — hand-carved arches, intricate bracket work, and integrated ambient lighting, all built and installed by hand. The kind of piece that shows what three decades of honing a craft can produce.",
+      "category": "detail",
+      "featured": false,
+      "heroImage": "/images/details/01-ornate-back-bar-with-carved-arches.jpeg",
+      "highlights": [
+        "Hand-carved ornate arches",
+        "Victorian-inspired detailing",
+        "Custom bracket work",
+        "Ambient lighting integration"
+      ],
+      "images": [
+        "/images/details/01-ornate-back-bar-with-carved-arches.jpeg",
+        "/images/details/02-victorian-back-bar-carved-details-2.jpeg",
+        "/images/details/03-victorian-back-bar-installed.jpeg",
+        "/images/details/04-ornate-back-bar-night-lighting.jpeg",
+        "/images/details/05-back-bar-carved-bracket-detail.jpeg"
+      ]
+    }
+  ],
+  "beforeAfterPairs": [
+    { "slug": "pair-01-great-room-window-wall", "title": "Great Room Window Wall" },
+    { "slug": "pair-02-great-room-alt-angle", "title": "Great Room" },
+    { "slug": "pair-03-loft-trusses", "title": "Loft Trusses" },
+    { "slug": "pair-04-window-seat", "title": "Window Seat" },
+    { "slug": "pair-05-exterior-mountain-home", "title": "Mountain Home Exterior" },
+    { "slug": "pair-06-barn-garage", "title": "Barn Garage" },
+    { "slug": "pair-07-vertical-siding-building", "title": "Vertical Siding" },
+    { "slug": "pair-08-cedar-shingle-exterior", "title": "Cedar Shingle Exterior" },
+    { "slug": "pair-09-covered-entry", "title": "Covered Entry" },
+    { "slug": "pair-10-loft-construction", "title": "Loft Construction" }
+  ]
+}

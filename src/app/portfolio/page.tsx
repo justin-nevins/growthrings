@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { projects, beforeAfterPairs } from "@/data/projects";
+import { projects, beforeAfterPairs, portfolioPage } from "@/data/projects";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 type Filter = "all" | "exterior" | "interior" | "detail" | "other";
@@ -30,11 +30,11 @@ export default function PortfolioPage() {
       <section className="relative pt-32 pb-16 bg-charcoal">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl sm:text-6xl font-bold text-white font-[family-name:var(--font-barlow)] uppercase">
-            Our <span className="text-amber">Portfolio</span>
+            {portfolioPage.heading}{" "}
+            <span className="text-amber">{portfolioPage.headingAccent}</span>
           </h1>
           <p className="mt-4 text-xl text-white/60 max-w-2xl">
-            Five completed homes and counting. Modern mountain design with
-            craftsman detailing — every project built one at a time.
+            {portfolioPage.text}
           </p>
         </div>
       </section>
@@ -96,11 +96,11 @@ export default function PortfolioPage() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-bold font-[family-name:var(--font-barlow)] uppercase tracking-wide text-charcoal">
-              Before &amp; <span className="text-amber">After</span>
+              {portfolioPage.beforeAfterHeading}{" "}
+              <span className="text-amber">{portfolioPage.beforeAfterHeadingAccent}</span>
             </h2>
             <p className="mt-4 text-charcoal/60 text-lg max-w-2xl mx-auto">
-              Drag the slider to see the transformation. From framing to
-              finished — every detail matters.
+              {portfolioPage.beforeAfterText}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
+import site from "@content/site.json";
 
 const quickLinks = [
   { name: "Portfolio", href: "/portfolio" },
@@ -8,21 +9,9 @@ const quickLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
-const services = [
-  "Custom Home Construction",
-  "Residential Design",
-  "Project Management",
-  "Fine Finish Carpentry",
-];
+const services = site.services;
 
-const serviceAreas = [
-  "Whitefish",
-  "Kalispell",
-  "Bigfork",
-  "Columbia Falls",
-  "Somers",
-  "West Glacier",
-];
+const serviceAreas = site.serviceAreas;
 
 export default function Footer() {
   return (
@@ -35,8 +24,7 @@ export default function Footer() {
               Larchwood<span className="text-amber"> Construction</span>
             </span>
             <p className="mt-4 text-white/60 leading-relaxed">
-              Custom homes built one at a time. Master craftsmanship in
-              Montana&apos;s Flathead Valley.
+              {site.footerBlurb}
             </p>
           </div>
 
@@ -89,20 +77,20 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:4068580748"
+                  href={`tel:${site.phoneRaw}`}
                   className="flex items-center gap-3 text-white/60 hover:text-amber transition-colors"
                 >
                   <Phone className="h-4 w-4 shrink-0" />
-                  (406) 858-0748
+                  {site.phone}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:growthrings@gmail.com"
+                  href={`mailto:${site.email}`}
                   className="flex items-center gap-3 text-white/60 hover:text-amber transition-colors"
                 >
                   <Mail className="h-4 w-4 shrink-0" />
-                  growthrings@gmail.com
+                  {site.email}
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/60">

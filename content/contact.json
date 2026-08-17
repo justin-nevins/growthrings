@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "heading": "Start Your",
+    "headingAccent": "Project",
+    "text": "The best way to start is a conversation. Give Josh a call directly, or send a message and he'll get back to you within 24 hours."
+  },
+  "submitted": {
+    "heading": "Contact",
+    "headingAccent": "Us",
+    "confirmationHeading": "Message Sent",
+    "confirmationText": "Thanks for reaching out. Josh will call you back within 24 hours to discuss your project."
+  },
+  "phoneBox": {
+    "heading": "Prefer a Phone Call?",
+    "text": "A direct conversation is the fastest way to see if we're a good fit for your project."
+  },
+  "servingLine": "Serving Whitefish, Kalispell, Bigfork, Columbia Falls, Somers, West Glacier, and the greater Flathead Valley",
+  "nextSteps": {
+    "heading": "What Happens Next",
+    "steps": [
+      "I'll call you back within 24 hours",
+      "We'll talk about your vision, your land, and your budget",
+      "We'll decide together if we're a good fit"
+    ]
+  },
+  "referralSources": [
+    "Realtor referral",
+    "Online search",
+    "Word of mouth",
+    "Saw a project",
+    "Other"
+  ]
+}
