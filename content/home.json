@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "headline": "Custom Homes Built",
+    "headlineAccent": "One At A Time",
+    "subheadline": "Master craftsmanship in Montana's Flathead Valley. 30 years of hands-on expertise, from design to finish carpentry.",
+    "image": "/images/hero/01-modern-mountain-home-twilight-stone-chimney.jpeg",
+    "imageAlt": "Custom mountain home built by Larchwood Construction in Flathead Valley, Montana",
+    "primaryButton": "Start Your Project"
+  },
+  "pillars": [
+    {
+      "title": "One Project Focus",
+      "text": "Your home is the only home we're building. One project at a time means undivided attention, faster decisions, and no delays from competing priorities."
+    },
+    {
+      "title": "Craftsman's Eye",
+      "text": "With 30 years of hands-on experience — from framing to fine finish carpentry — Josh serves as GC, project manager, and lead craftsman. Nothing escapes his eye."
+    },
+    {
+      "title": "Transparent Process",
+      "text": "Every dollar is accounted for. Cost-plus pricing means you see actual costs with no inflated bids or hidden margins. A true partnership built on trust."
+    }
+  ],
+  "featuredWork": {
+    "heading": "Featured",
+    "headingAccent": "Work",
+    "text": "Modern mountain homes with craftsman detailing. Every project reflects 30 years of hands-on expertise.",
+    "viewAllLabel": "View All Projects"
+  },
+  "testimonial": {
+    "quote": "I build one home at a time because that's what your project deserves — my full attention, from the first sketch to the final walkthrough. This isn't a production line. It's a partnership.",
+    "name": "Josh Krueger",
+    "role": "Owner & Master Craftsman",
+    "photo": "/images/about/01-josh-timber-beam-work.jpeg"
+  },
+  "serviceArea": {
+    "heading": "Serving the",
+    "headingAccent": "Flathead Valley",
+    "text": "From Bigfork and Somers to the south, through Kalispell and Whitefish, up to West Glacier and the North Fork. We build custom homes on undeveloped lots throughout Montana's most beautiful valley.",
+    "image": "/images/hero/02-workshop-mountain-field-setting.jpeg",
+    "imageAlt": "Larchwood Construction building in Montana's Flathead Valley"
+  },
+  "cta": {
+    "heading": "Ready to Build Your",
+    "headingAccent": "Forever Home?",
+    "text": "The best way to start is a conversation. Let's talk about your vision, your land, and whether we're a good fit.",
+    "image": "/images/hero/03-metal-workshop-mountain-backdrop.jpeg",
+    "imageAlt": "Custom home with mountain backdrop",
+    "messageButton": "Send a Message"
+  }
+}

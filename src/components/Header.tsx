@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
+import site from "@content/site.json";
 
 const navigation = [
   { name: "Portfolio", href: "/portfolio" },
@@ -55,11 +56,11 @@ export default function Header() {
           {/* Phone + CTA */}
           <div className="hidden lg:flex lg:items-center lg:gap-4">
             <a
-              href="tel:4068580748"
+              href={`tel:${site.phoneRaw}`}
               className="flex items-center gap-2 text-white/80 hover:text-amber font-medium transition-colors"
             >
               <Phone className="h-4 w-4" />
-              (406) 858-0748
+              {site.phone}
             </a>
             <Link
               href="/contact"
@@ -98,11 +99,11 @@ export default function Header() {
                 </Link>
               ))}
               <a
-                href="tel:4068580748"
+                href={`tel:${site.phoneRaw}`}
                 className="flex items-center gap-2 text-amber font-semibold py-2"
               >
                 <Phone className="h-5 w-5" />
-                (406) 858-0748
+                {site.phone}
               </a>
               <Link
                 href="/contact"

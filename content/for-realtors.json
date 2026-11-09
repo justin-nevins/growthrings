@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "For Realtors",
+    "description": "Your clients deserve a builder you trust. Partner with Larchwood Construction for reliable, transparent custom home building in Montana's Flathead Valley."
+  },
+  "hero": {
+    "heading": "Your Clients Deserve a Builder",
+    "headingAccent": "You Trust",
+    "text": "When your client purchases land and needs a builder, we want to be your first recommendation. A partnership that makes you look good and keeps your clients coming back."
+  },
+  "problem": {
+    "eyebrow": "The Problem You've Seen",
+    "heading": "You've Seen It",
+    "headingAccent": "Go Wrong",
+    "paragraphs": [
+      "Your client hires the wrong contractor. The project goes sideways. Ghosting. Delays. Excuses. Unprofessional job sites. And the relationship you built with that client suffers.",
+      "When a land buyer needs a builder, the referral you make reflects directly on you. A bad recommendation costs you future business."
+    ],
+    "image": "/images/process/01-timber-frame-construction-framing.jpeg",
+    "imageAlt": "Professional construction site"
+  },
+  "solution": {
+    "eyebrow": "The Solution",
+    "heading": "A Referral You Can Be",
+    "headingAccent": "Proud Of",
+    "cards": [
+      {
+        "title": "One Project Focus",
+        "text": "Your client is the only client. One project at a time means undivided attention, clear communication, and no excuses about other jobs."
+      },
+      {
+        "title": "Clear Communication",
+        "text": "Monthly cost breakdowns, regular progress meetings, and direct phone access. Your client will never wonder what's happening with their build."
+      },
+      {
+        "title": "Professional Job Sites",
+        "text": "Clean, organized, and safe. A job site you'd be comfortable walking through with a prospective buyer — because that's exactly the kind of operation we run."
+      },
+      {
+        "title": "Reputation-Built Business",
+        "text": "30 years of work, zero advertising. Every project has come through earned trust and personal relationships. That track record protects your referral."
+      }
+    ]
+  },
+  "partnership": {
+    "eyebrow": "What You Get",
+    "heading": "A True",
+    "headingAccent": "Partnership",
+    "items": [
+      {
+        "title": "Reliable Referral Partner",
+        "text": "One call to me saves your client months of searching and vetting builders."
+      },
+      {
+        "title": "Client Updates",
+        "text": "I'll keep you in the loop on your client's build progress if desired."
+      },
+      {
+        "title": "Professional Representation",
+        "text": "My job sites and finished product make you look good. Guaranteed."
+      },
+      {
+        "title": "Future Referrals Back",
+        "text": "Buyers of completed homes need realtors. I send business both ways."
+      }
+    ],
+    "image": "/images/hero/05-cedar-shingle-craftsman-autumn-exterior.jpeg",
+    "imageAlt": "Completed craftsman home"
+  },
+  "cta": {
+    "heading": "Let's",
+    "headingAccent": "Talk",
+    "text": "I want to be your first call when a client is looking to purchase land and hire a builder. Let's start that relationship.",
+    "callButton": "Call Josh Directly",
+    "messageButton": "Send a Message"
+  }
+}

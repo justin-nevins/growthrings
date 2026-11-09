@@ -2,14 +2,8 @@
 
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
-
-const referralSources = [
-  "Realtor referral",
-  "Online search",
-  "Word of mouth",
-  "Saw a project",
-  "Other",
-];
+import contact from "@content/contact.json";
+import site from "@content/site.json";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -20,7 +14,8 @@ export default function ContactPage() {
         <section className="relative pt-32 pb-16 bg-charcoal">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h1 className="text-5xl sm:text-6xl font-bold text-white font-[family-name:var(--font-barlow)] uppercase">
-              Contact <span className="text-amber">Us</span>
+              {contact.submitted.heading}{" "}
+              <span className="text-amber">{contact.submitted.headingAccent}</span>
             </h1>
           </div>
         </section>
@@ -28,11 +23,10 @@ export default function ContactPage() {
           <div className="mx-auto max-w-2xl text-center">
             <CheckCircle className="h-16 w-16 text-amber mx-auto mb-6" />
             <h2 className="text-3xl font-bold font-[family-name:var(--font-barlow)] uppercase text-charcoal">
-              Message Sent
+              {contact.submitted.confirmationHeading}
             </h2>
             <p className="mt-4 text-charcoal/60 text-lg">
-              Thanks for reaching out. Josh will call you back within 24 hours
-              to discuss your project.
+              {contact.submitted.confirmationText}
             </p>
           </div>
         </section>
@@ -46,11 +40,11 @@ export default function ContactPage() {
       <section className="relative pt-32 pb-16 bg-charcoal">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl sm:text-6xl font-bold text-white font-[family-name:var(--font-barlow)] uppercase">
-            Start Your <span className="text-amber">Project</span>
+            {contact.hero.heading}{" "}
+            <span className="text-amber">{contact.hero.headingAccent}</span>
           </h1>
           <p className="mt-4 text-xl text-white/60 max-w-2xl">
-            The best way to start is a conversation. Give Josh a call directly,
-            or send a message and he&apos;ll get back to you within 24 hours.
+            {contact.hero.text}
           </p>
         </div>
       </section>
@@ -63,18 +57,17 @@ export default function ContactPage() {
               {/* Phone - prominent */}
               <div className="bg-amber/10 p-8 rounded-lg">
                 <h2 className="text-sm font-[family-name:var(--font-barlow)] font-semibold uppercase tracking-wide text-amber mb-4">
-                  Prefer a Phone Call?
+                  {contact.phoneBox.heading}
                 </h2>
                 <a
-                  href="tel:4068580748"
+                  href={`tel:${site.phoneRaw}`}
                   className="flex items-center gap-3 text-3xl font-bold text-charcoal hover:text-amber transition-colors font-[family-name:var(--font-barlow)]"
                 >
                   <Phone className="h-8 w-8" />
-                  (406) 858-0748
+                  {site.phone}
                 </a>
                 <p className="mt-3 text-charcoal/60">
-                  A direct conversation is the fastest way to see if we&apos;re
-                  a good fit for your project.
+                  {contact.phoneBox.text}
                 </p>
               </div>
 
@@ -82,39 +75,30 @@ export default function ContactPage() {
                 <div className="flex items-center gap-3 text-charcoal/70">
                   <Mail className="h-5 w-5 text-amber" />
                   <a
-                    href="mailto:growthrings@gmail.com"
+                    href={`mailto:${site.email}`}
                     className="hover:text-amber transition-colors"
                   >
-                    growthrings@gmail.com
+                    {site.email}
                   </a>
                 </div>
                 <div className="flex items-start gap-3 text-charcoal/70">
                   <MapPin className="h-5 w-5 text-amber shrink-0 mt-0.5" />
-                  <span>
-                    Serving Whitefish, Kalispell, Bigfork, Columbia Falls,
-                    Somers, West Glacier, and the greater Flathead Valley
-                  </span>
+                  <span>{contact.servingLine}</span>
                 </div>
               </div>
 
               {/* What happens next */}
               <div className="bg-cream p-6 rounded-lg">
                 <h3 className="font-[family-name:var(--font-barlow)] font-semibold uppercase tracking-wide text-sm text-charcoal mb-3">
-                  What Happens Next
+                  {contact.nextSteps.heading}
                 </h3>
                 <ol className="space-y-3 text-charcoal/70">
-                  <li className="flex gap-3">
-                    <span className="font-bold text-amber">1.</span>
-                    I&apos;ll call you back within 24 hours
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="font-bold text-amber">2.</span>
-                    We&apos;ll talk about your vision, your land, and your budget
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="font-bold text-amber">3.</span>
-                    We&apos;ll decide together if we&apos;re a good fit
-                  </li>
+                  {contact.nextSteps.steps.map((step, i) => (
+                    <li key={step} className="flex gap-3">
+                      <span className="font-bold text-amber">{i + 1}.</span>
+                      {step}
+                    </li>
+                  ))}
                 </ol>
               </div>
             </div>
@@ -138,7 +122,7 @@ export default function ContactPage() {
                   const body = encodeURIComponent(
                     `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nReferral: ${referral || "Not specified"}\n\n${message}`
                   );
-                  window.location.href = `mailto:growthrings@gmail.com?subject=${subject}&body=${body}`;
+                  window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
                   setSubmitted(true);
                 }}
                 className="space-y-6"
@@ -225,7 +209,7 @@ export default function ContactPage() {
                     className="w-full px-4 py-3 border border-stone rounded-lg focus:ring-2 focus:ring-amber focus:border-transparent outline-none bg-white"
                   >
                     <option value="">Select one...</option>
-                    {referralSources.map((source) => (
+                    {contact.referralSources.map((source) => (
                       <option key={source} value={source}>
                         {source}
                       </option>
@@ -243,8 +227,8 @@ export default function ContactPage() {
 
                 <p className="text-center text-charcoal/40 text-sm">
                   Or call directly:{" "}
-                  <a href="tel:4068580748" className="text-amber font-medium">
-                    (406) 858-0748
+                  <a href={`tel:${site.phoneRaw}`} className="text-amber font-medium">
+                    {site.phone}
                   </a>
                 </p>
               </form>

@@ -1,31 +1,28 @@
+import site from "@content/site.json";
+
 export default function JsonLd() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Larchwood Construction",
-    description:
-      "Custom homes built one at a time. Master craftsmanship in Montana's Flathead Valley. 30 years of hands-on expertise from design to finish carpentry.",
+    description: site.metaDescription,
     url: "https://larchwoodconstruction.com",
-    telephone: "+14068580748",
-    email: "growthrings@gmail.com",
+    telephone: `+1${site.phoneRaw}`,
+    email: site.email,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Columbia Falls",
-      addressRegion: "MT",
+      addressLocality: site.addressLocality,
+      addressRegion: site.addressRegion,
       addressCountry: "US",
     },
-    areaServed: [
-      { "@type": "City", name: "Whitefish, MT" },
-      { "@type": "City", name: "Kalispell, MT" },
-      { "@type": "City", name: "Bigfork, MT" },
-      { "@type": "City", name: "Columbia Falls, MT" },
-      { "@type": "City", name: "Somers, MT" },
-      { "@type": "City", name: "West Glacier, MT" },
-    ],
+    areaServed: site.serviceAreas.map((area) => ({
+      "@type": "City",
+      name: `${area}, ${site.addressRegion}`,
+    })),
     founder: {
       "@type": "Person",
-      name: "Josh Krueger",
-      jobTitle: "Owner & Master Craftsman",
+      name: site.founderName,
+      jobTitle: site.founderTitle,
     },
     knowsAbout: [
       "Custom Home Construction",
@@ -35,7 +32,7 @@ export default function JsonLd() {
       "Project Management",
       "Timber Frame Construction",
     ],
-    priceRange: "$700,000 - $1,500,000",
+    priceRange: site.priceRange,
   };
 
   return (

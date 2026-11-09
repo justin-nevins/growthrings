@@ -1,0 +1,32 @@
+{
+  "phone": "(406) 858-0748",
+  "phoneRaw": "4068580748",
+  "email": "growthrings@gmail.com",
+  "serviceAreas": [
+    "Whitefish",
+    "Kalispell",
+    "Bigfork",
+    "Columbia Falls",
+    "Somers",
+    "West Glacier"
+  ],
+  "services": [
+    "Custom Home Construction",
+    "Residential Design",
+    "Project Management",
+    "Fine Finish Carpentry"
+  ],
+  "footerBlurb": "Custom homes built one at a time. Master craftsmanship in Montana's Flathead Valley.",
+  "metaTitle": "Larchwood Construction | Custom Home Builder - Flathead Valley, Montana",
+  "metaDescription": "Custom homes built one at a time. Master craftsmanship in Montana's Flathead Valley. 30 years of hands-on expertise from design to finish carpentry.",
+  "addressLocality": "Columbia Falls",
+  "addressRegion": "MT",
+  "priceRange": "$700,000 - $1,500,000",
+  "founderName": "Josh Krueger",
+  "founderTitle": "Owner & Master Craftsman",
+  "projectCta": {
+    "heading": "Want Something Like",
+    "headingAccent": "This?",
+    "text": "Every project starts with a conversation about your vision, your land, and your budget."
+  }
+}
